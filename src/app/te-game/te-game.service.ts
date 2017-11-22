@@ -95,8 +95,7 @@ export class TEGameService {
   }
 
   private checkTie(): boolean {
-    return this.getEmptySquares().length === 0 ? this.declareWinner('Tie game') : false;
-
+    return this.getEmptySquares().length === 0 && !this.winner ? this.declareWinner('Tie game') : false;
   }
 
   private getEmptySquares(): TECellInterface[] {
