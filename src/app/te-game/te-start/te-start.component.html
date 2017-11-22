@@ -1,0 +1,9 @@
+<div *ngIf="isShowPopup" class="popup-wrapper">
+  <div class="popup-dialog">
+    <p class="popup-dialog__text">Select symbol</p>
+    <div class="popup-dialog__button-row">
+      <button (click)="selectSymbol('X')">X</button>
+      <button (click)="selectSymbol('O')">O</button>
+    </div>
+  </div>
+</div>

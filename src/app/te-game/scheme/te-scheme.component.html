@@ -1,0 +1,8 @@
+<table class="te-scheme">
+  <tr *ngFor="let row of convertedCells; index as rowIndex">
+    <td *ngFor="let cell of row; index as collIndex"
+        [ngClass]="cell === 'W' ? 'winner-cell': ''"
+        (click)="selectCell(getCellIndex(rowIndex, collIndex))"
+        >{{ convertCell(cell) }}</td>
+  </tr>
+</table>

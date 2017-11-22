@@ -1,27 +1,23 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { TEGameComponent } from './te-game/te-game.component';
+import { TESchemeComponent } from './te-game/scheme/te-scheme.component';
+import { TEStartComponent } from './te-game/te-start/te-start.component';
+import { TEWinnerComponent } from './te-game/te-winner/te-winner.component';
+
+import { TEGameService } from './te-game/te-game.service';
+
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        TEGameComponent,
+        TESchemeComponent,
+        TEStartComponent,
+        TEWinnerComponent
       ],
+      providers: [TEGameService]
     }).compileComponents();
-  }));
-  it('should create the app', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
-  }));
-  it(`should have as title 'app'`, async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('app');
-  }));
-  it('should render title in a h1 tag', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to app!');
   }));
 });
